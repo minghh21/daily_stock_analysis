@@ -43,6 +43,14 @@ jobs:
       
       - name: 检出代码
         uses: actions/checkout@v5
+
+      - name: Restore analysis data
+        uses: actions/cache@v4
+        with:
+          path: data/
+          key: dsa-data-${{ github.ref_name }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            dsa-data-${{ github.ref_name }}-
       
       - name: 设置 Python 环境
         uses: actions/setup-python@v6
