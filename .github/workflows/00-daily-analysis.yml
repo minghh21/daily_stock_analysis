@@ -1,6 +1,3 @@
-concurrency:
-  group: dsa-daily-analysis-${{ github.ref }}
-  cancel-in-progress: false
 name: 每日股票分析
 
 on:
